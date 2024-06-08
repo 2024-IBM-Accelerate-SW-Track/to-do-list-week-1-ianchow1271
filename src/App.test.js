@@ -20,13 +20,13 @@ test('test that App component renders', () => {
   render(<App />, container);
  });
 
-test(data-testid="new-item-button", () => {
+test('test that new-item-button is a button', () => {
   render(<App/>, container);
   const element = screen.getByTestId('new-item-button');
   expect(element).toBeInTheDocument();
 });
 
-test(data-testid="new-item-textfield", () => {
+test('test that new-item-textfield is an textfield ', () => {
   render(<App/>, container);
   const element = screen.getByTestId('new-item-textfield');
   expect(element).toBeInTheDocument();
