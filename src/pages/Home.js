@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AddTodo from "../component/AddTodo";
 import Todos from "../component/todos";
 import "./Home.css";
+import RemoveTodo from "../component/RemoveTodo";
 
 class Home extends Component {
   // A default state of this component with an empty list of todos.
@@ -27,12 +28,22 @@ class Home extends Component {
       todos: new_list,
     });
   };
+
+  removeTodo = () => {
+    let new_list = [...this.state.todos];
+    new_list.pop();
+    this.setState({
+      todos: new_list,
+    });
+  };
+
   render() {
     return (
       <div className="Home">
         <p>
           <Todos todos={this.state.todos} />
           <AddTodo addTodo={this.addTodo} />
+          <RemoveTodo RemoveTodo={this.removeTodo}/>
         </p>
         <h1>Todo's </h1>
       </div>
